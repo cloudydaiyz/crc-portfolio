@@ -1,0 +1,426 @@
+/* CSS RESET */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+header, footer {
+    border: 1px solid green;
+}
+
+/******************/
+/* HEADER SECTION */
+/******************/
+
+header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    padding: 48px;
+}
+
+section {
+    border: 1px solid blue;
+}
+
+div {
+    border: 1px solid red;
+}
+
+header div.info {
+    text-align: center;
+}
+
+header div.info h2 {
+    margin-bottom: 8px;
+}
+
+header div.buttons {
+    display: flex;
+    gap: 24px;
+}
+
+header div.contact-btn.btn-1 button:nth-of-type(4) {
+    color: black;
+}
+
+header div.visits {
+    text-align: center;
+}
+
+header div.visits h3 {
+    margin-bottom: 8px;
+}
+
+@media (max-width: 630px) {
+    header div.buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 410px) {
+    header div.btn-1 button:nth-of-type(1), 
+    header div.btn-2 button:nth-of-type(1) 
+    {
+        border-radius: 8px;
+        width: 100%;
+    }
+
+    header div.btn-1 button:nth-of-type(2),
+    header div.btn-1 button:nth-of-type(3),
+    header div.btn-1 button:nth-of-type(4),
+    header div.btn-2 button:nth-of-type(2)
+    {
+        display: none;
+    }
+}
+
+/********************/
+/* ABOUT ME SECTION */
+/********************/
+
+section.about-me {
+    height: 100vh;
+    display: flex;
+    gap: 48px;
+    padding: 48px;
+}
+
+section.about-me div.my-info {
+    width: 50%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 24px;
+}
+
+section.about-me div.gallery {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+div.gallery div.image-selector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+
+    margin-bottom: 24px;
+}
+
+div.image-selector button {
+    width: 32px;
+    height: 32px;
+}
+
+div.image-selector span.images {
+    flex-grow: 1;
+    text-align: center;
+}
+
+div.image-selector span.images img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: none;
+}
+
+div.image-selector span.images img.selected {
+    display: initial;
+    animation: select-image 2s;
+}
+
+div.description {
+    padding: 16px;
+    height: 8em;
+}
+
+section.about-me > h2 {
+    display: none;
+}
+
+@keyframes select-image {
+    0% {
+        width: 90%;
+        opacity: 0;
+    }
+
+    100% {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+@media (max-width: 940px) {
+    section.about-me {
+        flex-direction: column-reverse;
+        align-items: center;
+        padding: 48px;
+    }   
+
+    section.about-me div.my-info,
+    section.about-me div.gallery {
+        width: 100%;
+    }
+
+    section.about-me div.my-info h2 {
+        display: none;
+    }
+
+    section.about-me > h2 {
+        margin-top: 48px;
+        display: initial;
+    }
+
+    div.image-selector span.images img {
+        max-width: 350px;
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 630px) {
+    section.about-me {
+        padding: 16px;
+    }
+
+    div.gallery div.image-selector {
+        gap: 8px;
+    }
+}
+
+/******************/
+/* SKILLS SECTION */
+/******************/
+
+section.skills {
+    height: fit-content;
+}
+
+section.skills div.rotating-tech-skills {
+    display: flex;
+    gap: 128px;
+    margin-bottom: 48px;
+    overflow: hidden;
+}
+
+div.rotating-tech-skills span.tech-skills {
+    display: flex;
+    justify-content: center;
+    gap: 128px;
+}
+
+span.tech-skills img {
+    width: 128px;
+    height: 128px;
+}
+
+span.tech-skills img[data-skill="python"] {
+    order: 0;
+}
+
+section.skills span.tech-skills-labels {
+    display: flex;
+}
+
+span.tech-skills-labels div.label {
+    display: none;
+    width: 100%;
+}
+
+span.tech-skills-labels div.label.visible {
+    display: initial;
+}
+
+section.skills h2 {
+    margin-top: 48px;
+    margin-bottom: 48px;
+    text-align: center;
+}
+
+section.skills p {
+    margin-bottom: 48px;
+    text-align: center;
+}
+
+div.rotating-tech-skills span.tech-skills:nth-of-type(1),
+div.rotating-tech-skills span.tech-skills:nth-of-type(2),
+div.rotating-tech-skills span.tech-skills:nth-of-type(3)
+{
+    animation-name: rotate-skills;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rotate-skills {
+    0% {
+        transform: translateX(0%);
+    }
+
+    /* Return to initial position */
+    100% {
+        transform: translateX(-200%) translateX(-256px);
+    }
+}
+
+@media (max-width: 940px) {
+    section.skills div.rotating-tech-skills,
+    div.rotating-tech-skills span.tech-skills 
+    {
+        gap: 64px;
+    }
+}
+
+@media (max-width: 630px) {
+    section.skills div.rotating-tech-skills,
+    div.rotating-tech-skills span.tech-skills 
+    {
+        gap: 32px;
+    }
+}
+
+/********************/
+/* PROJECTS SECTION */
+/********************/
+
+section.projects {
+    padding: 48px;
+}
+
+section.projects h2 {
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 48px;
+}
+
+section.projects div.all-projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 48px;
+    justify-content: center;
+}
+
+@media (max-width: 630px) {
+    div.all-projects div.project {
+        width: 100%;
+    }
+}
+
+@media (max-width: 430px) {
+    section.projects {
+        padding: 16px;
+    }
+}
+
+/**********************/
+/* CONTACT ME SECTION */
+/**********************/
+
+section.contact-me {
+    margin: 48px;
+}
+
+section.contact-me h2 {
+    margin-top: 48px;
+    margin-bottom: 48px;
+    text-align: center;
+}
+
+section.contact-me {
+    display: flex;
+    align-items: center;
+    min-height: 50vh;
+    gap: 48px;
+}
+
+section.contact-me * {
+    flex-grow: 1;
+}
+
+section.contact-me form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+section.contact-me form * {
+    max-width: 600px;
+    width: 100%;
+}
+
+section.contact-me form textarea {
+    resize: none;
+}
+
+section.contact-me div.info {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+} 
+
+@media (max-width: 940px) {
+    section.contact-me {
+        flex-direction: column;
+    }
+
+    section.contact-me h2 {
+        margin-bottom: 0px;
+    }
+
+    section.contact-me form {
+        width: 100%;
+    }
+
+    section.contact-me div.info {
+        width: 100%;
+        text-align: center;
+    } 
+}
+
+@media (max-width: 430px) {
+    section.contact-me {
+        margin: 16px;
+    }
+}
+
+/******************/
+/* FOOTER SECTION */
+/******************/
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    height: 50vh;
+    padding: 16px;
+}
+
+footer h2 {
+    margin-top: 128px;
+    margin-bottom: 48px;
+}
+
+footer span.links {
+    display: flex;
+    gap: 24px;
+    font-size: 32px;
+}
+
+footer p {
+    position: absolute;
+    margin: 16px;
+    bottom: 16px;
+}
