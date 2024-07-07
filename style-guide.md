@@ -64,9 +64,9 @@ HTML, CSS, JavaScript, TypeScript, Java, Python, Docker, AWS, Terraform
 
 ## Featured Projects
 
-Membership Logger (Backend, Typescript)
+Membership Logger (Backend, TypeScript)
 
-Deep Interest Validator (Backend, Typescript)
+Deep Interest Validator (Backend, JavaScript)
 
 Interactive Comments Section (Frontend, HTML, CSS, TS)
 

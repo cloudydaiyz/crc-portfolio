@@ -80,12 +80,128 @@ header div.visits h3 {
     }
 }
 
+/**********/
+/* NAVBAR */
+/**********/
+nav {
+    position: fixed;
+    top: 0;
+    left: -80px;
+    width: 80px;
+    height: 100vh;
+    z-index: 10;
+
+    border: 1px solid aqua;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 8px;
+}
+
+main.nav-visible nav {
+    left: 0px;
+}
+
+nav div.color-toggle {
+    width: 100%;
+}
+
+div.color-toggle button {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    font-size: 16px;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+div.color-toggle button i {
+    position: absolute;
+}
+
+div.color-toggle button.light i.fa-moon, 
+div.color-toggle button.dark i.fa-sun 
+{
+    display: none;
+}
+
+div.color-toggle button.light i.fa-sun, 
+div.color-toggle button.dark i.fa-moon 
+{
+    display: initial;
+}
+
+nav div.landmarks {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    justify-content: center;
+    align-items: center;
+}
+
+nav div.landmarks button {
+    position: relative;
+    font-size: 32px;
+    background: none;
+    border: none;
+}
+
+main.nav-visible section {
+    margin-left: 80px;
+}
+
+nav {
+    transition-property: top, left;
+    transition-duration: 0.5s;
+}
+
+section {
+    transition: margin-left 0.5s;
+}
+
+@media (max-width: 630px) {
+    nav {
+        left: 0px;
+        top: -64px;
+        height: 64px;
+        width: 100vw;
+
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    main.nav-visible nav {
+        top: 0px;
+    }
+
+    nav div.color-toggle {
+        width: 62px;
+        height: fit-content;
+    }
+
+    nav div.landmarks {
+        flex-direction: row;
+        width: fit-content;
+    }
+
+    section, main.nav-visible section {
+        margin-left: inherit;
+    }
+}
+
 /********************/
 /* ABOUT ME SECTION */
 /********************/
 
 section.about-me {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     gap: 48px;
     padding: 48px;
@@ -203,7 +319,7 @@ section.about-me > h2 {
 /******************/
 
 section.skills {
-    height: fit-content;
+    min-height: fit-content;
 }
 
 section.skills div.rotating-tech-skills {
@@ -328,6 +444,7 @@ section.projects div.all-projects {
 
 section.contact-me {
     margin: 48px;
+    margin-left: 80px;
 }
 
 section.contact-me h2 {
@@ -355,18 +472,23 @@ section.contact-me form {
     gap: 24px;
 }
 
-section.contact-me form * {
+section.contact-me form input, 
+section.contact-me form textarea 
+{
     max-width: 600px;
     width: 100%;
+    padding: 8px;
 }
 
 section.contact-me form textarea {
     resize: none;
+    height: 10em;
 }
 
 section.contact-me div.info {
     display: flex;
     flex-direction: column;
+    text-align: center;
     gap: 24px;
 } 
 
@@ -385,7 +507,6 @@ section.contact-me div.info {
 
     section.contact-me div.info {
         width: 100%;
-        text-align: center;
     } 
 }
 
@@ -409,7 +530,7 @@ footer {
 }
 
 footer h2 {
-    margin-top: 128px;
+    margin-top: 64px;
     margin-bottom: 48px;
 }
 
