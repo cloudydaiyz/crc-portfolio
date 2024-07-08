@@ -22,11 +22,11 @@
             <h3>Full Stack Developer</h3>
         </div>
         <div class="buttons">
-            <div class="portfolio-btn btn-2">
+            <div class="contact-btn btn-2">
                 <button>CONTACT ME</button>
                 <button>V</button>
             </div>
-            <div class="contact-btn btn-1">
+            <div class="portfolio-btn btn-1">
                 <button>VIEW MY PROJECTS</button>
                 <button>V</button>
                 <button>V</button>
@@ -38,7 +38,7 @@
             <p>This portfolio was made as a submission to the <a href="https://cloudresumechallenge.dev/docs/the-challenge/">Cloud Resume Challenge</a>.</p>
         </div>
     </header>
-    <main class="v">
+    <main>
         <nav>
             <div class="color-toggle">
                 <button class="light">
@@ -47,33 +47,52 @@
                 </button>
             </div>
             <div class="landmarks">
-                <button class="about-me"><i class="fa-solid fa-circle-user"></i></button>
-                <button class="skills"><i class="fa-solid fa-screwdriver-wrench"></i></button>
-                <button class="projects"><i class="fa-solid fa-list-check"></i></button>
-                <button class="contact-me"><i class="fa-solid fa-envelope"></i></button>
+                <button class="about-me">
+                    <i class="fa-solid fa-circle-user"></i>
+                    <p>About Me</p>
+                </button>
+                <button class="skills">
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                    <p>Skills</p>
+                </button>
+                <button class="projects">
+                    <i class="fa-solid fa-list-check"></i>
+                    <p>Projects</p>
+                </button>
+                <button class="contact-me">
+                    <i class="fa-solid fa-envelope"></i>
+                    <p>Contact Me</p>
+                </button>
             </div>
         </nav>
         <section class="about-me">
             <div class="my-info">
-                <h2>About me</h2>
-                <h3>Hello, my name is Kylan Duncan! (wave)</h3>
+                <h2>About Me</h2>
+                <h3>Hello, my name is Kylan Duncan!</h3>
                 <p>I am a full stack developer, fueled by continous learning and a passion of creating innovative software. As a previous student of the University of Texas at Austin and a software engineer with previous intern experience at Amazon, Cummins, and Ansys, I bring a unique blend of experience, spanning from full stack development, project management, and mentorship. I'm eager to put my skills and knowledge to use by creating innovative, efficient, and reliable solutions to real-world problems.</p>
             </div>
             <div class="gallery">
                 <div class="image-selector">
                     <button class="left-arrow"><i class="fa-solid fa-chevron-left"></i></button>
-                    <span class="images">
-                        <img src="images/headshot.png" alt="My headshot">
-                        <img src="images/linkedin-1.jpeg" alt="Linked in image 1" class="selected">
-                        <img src="images/linkedin-2.jpeg" alt="Linked in image 2">
-                        <img src="images/linkedin-3.jpeg" alt="Linked in image 3">
-                        <img src="images/linkedin-4.jpeg" alt="Linked in image 4">
-                        <img src="images/take-action-award.jpg" alt="Take action award">
-                    </span>
+                    <div class="img">
+                        <span class="images">
+                            <img src="images/headshot.png" alt="My headshot">
+                            <img src="images/linkedin-1.jpeg" alt="Linked in image 1">
+                            <img src="images/linkedin-2.jpeg" alt="Linked in image 2">
+                            <img src="images/linkedin-3.jpeg" alt="Linked in image 3">
+                            <img src="images/linkedin-4.jpeg" alt="Linked in image 4">
+                            <img src="images/take-action-award.jpg" alt="Take action award">
+                        </span>
+                    </div>
                     <button class="right-arrow"><i class="fa-solid fa-chevron-right"></i></button>
                 </div>
                 <div class="description">
-                    <p>This is a description of the image, if any.</p>
+                    <p>This is me. Nice to meet you!</p>
+                    <p>Me helping out a student at the Postman Student Fundamentals workshop that I hosted in collaboration with Postman at the University of Texas at Austin.</p>
+                    <p>A group picture of some of the attendees for the Postman Student Fundamentals workshop that I hosted in collaboration with Postman at the University of Texas at Austin.</p>
+                    <p>A fun Anime Night social that I hosted between my previous student organization, the Association of Black Computer Scientists, and my school's chapter of the National Society of Black engineers.</p>
+                    <p>I invited Jeremiah Peoples to speak to my organization about his experience as a software engineer to, now, a Developer Advocate.</p>
+                    <p>In 2022, I won the Take Action award in recognition of the effort dedicated to improving campus life through volunteerism, community, and leadership that E+E strives to include through its organizations.</p>
                 </div>
             </div>
             <h2>About me</h2>
@@ -115,8 +134,9 @@
                     <img src="images/skills/terraform.png" alt="Terraform" data-skill="terraform">
                 </span>
             </div>
-            <p>Hover or click to view the name of each skill</p>
+            <p>Click to view the name of each skill</p>
             <span class="tech-skills-labels">
+                <div class="label visible"><p data-skill="none">No skill selected</p></div>
                 <div class="label"><p data-skill="java">Java</p></div>
                 <div class="label"><p data-skill="python">Python</p></div>
                 <div class="label"><p data-skill="html">HTML5</p></div>
@@ -125,7 +145,7 @@
                 <div class="label"><p data-skill="typescript">TypeScript</p></div>
                 <div class="label"><p data-skill="docker">Docker</p></div>
                 <div class="label"><p data-skill="aws">AWS</p></div>
-                <div class="label visible"><p data-skill="terraform">Terraform</p></div>
+                <div class="label"><p data-skill="terraform">Terraform</p></div>
             </span>
         </section>
         <section class="projects">
@@ -139,6 +159,7 @@
                             <span class="backend">Backend</span>
                             <span class="ts">TypeScript</span>
                             <span class="js">express.js</span>
+                            <span class="docker">Docker</span>
                         </p>
                         <p class="desc">This project is blah blah blah.</p>
                         <div class="links">
@@ -181,24 +202,6 @@
                 <div class="project">
                     <img src="images/projects/interactive-comments.png" alt="Interactive comments project">
                     <div class="project-info">
-                        <h2>Tic Tac Toe</h2>
-                        <p class="skills">
-                            <span class="frontend">Frontend</span>
-                            <span class="html">HTML</span>
-                            <span class="css">CSS</span>
-                            <span class="js">JavaScript</span>
-                            <span class="ts">TypeScript</span>
-                        </p>
-                        <p class="desc">This project is blah blah blah.</p>
-                        <div class="links">
-                            <a href="https://github.cloudydaiyz.com/webdev-learning-center/03-tic-tac-toe/vanilla-mvc/" class="demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                            <a href="https://github.com/cloudydaiyz/webdev-learning-center/tree/main/03-tic-tac-toe" class="github"><i class="fa-brands fa-github"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project">
-                    <img src="images/projects/interactive-comments.png" alt="Interactive comments project">
-                    <div class="project-info">
                         <h2>Contact Form</h2>
                         <p class="skills">
                             <span class="frontend">Frontend</span>
@@ -210,23 +213,6 @@
                         <div class="links">
                             <a href="https://github.cloudydaiyz.com/contact-form-main/" class="demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                             <a href="https://github.com/cloudydaiyz/contact-form-main" class="github"><i class="fa-brands fa-github"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project">
-                    <img src="images/projects/interactive-comments.png" alt="Interactive comments project">
-                    <div class="project-info">
-                        <h2>Growth Landing Page</h2>
-                        <p class="skills">
-                            <span class="frontend">Frontend</span>
-                            <span class="html">HTML</span>
-                            <span class="css">CSS</span>
-                            <span class="js">JavaScript</span>
-                        </p>
-                        <p class="desc">This project is blah blah blah.</p>
-                        <div class="links">
-                            <a href="https://github.cloudydaiyz.com/webdev-learning-center/04-growth-landing-page/" class="demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                            <a href="https://github.com/cloudydaiyz/webdev-learning-center/tree/main/04-growth-landing-page" class="github"><i class="fa-brands fa-github"></i></a>
                         </div>
                     </div>
                 </div>
@@ -245,24 +231,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="project">
-                    <img src="images/projects/interactive-comments.png" alt="Interactive comments project">
-                    <div class="project-info">
-                        <h2>Bending Time Slitscan</h2>
-                        <p class="skills">
-                            <span class="workshop">Workshop</span>
-                            <span class="js">JavaScript</span>
-                            <span class="js">p5.js</span>
-                        </p>
-                        <p class="desc">This project is blah blah blah.</p>
-                        <div class="links">
-                            <a href="https://ut-abcs.github.io/bending-time-slitscan-ws/" class="demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                            <a href="https://github.com/UT-ABCS/bending-time-slitscan-ws" class="github"><i class="fa-brands fa-github"></i></a>
-                            <a href="https://docs.google.com/presentation/d/1ZDdzLphFATHMViL257meAJ6L67SQEUiGGoIrG_tjDws/edit#slide=id.g35f391192_00" class="slides"><i class="fa-brands fa-slideshare"></i></a>
-                        </div>
-                    </div>
-                </div>
             </div>
+        </section>
+        <section class="filler">
+            <!-- May have something here in the future -->
         </section>
         <section class="contact-me">
             <h2>Contact Me</h2>

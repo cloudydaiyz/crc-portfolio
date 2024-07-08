@@ -86,17 +86,25 @@ header div.visits h3 {
 nav {
     position: fixed;
     top: 0;
-    left: -80px;
+    left: -100px;
     width: 80px;
     height: 100vh;
     z-index: 10;
 
     border: 1px solid aqua;
+    overflow: hidden;
 
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     padding: 8px;
+
+    transition-property: top, left, width;
+    transition-duration: 0.5s;
+}
+
+nav:hover {
+    width: 200px;
 }
 
 main.nav-visible nav {
@@ -104,9 +112,11 @@ main.nav-visible nav {
 }
 
 nav div.color-toggle {
-    width: 100%;
+    width: 62px;
 }
 
+/* If I do dark / light mode in the future */
+/* 
 div.color-toggle button {
     width: 24px;
     height: 24px;
@@ -134,15 +144,19 @@ div.color-toggle button.light i.fa-sun,
 div.color-toggle button.dark i.fa-moon 
 {
     display: initial;
-}
+} 
+*/
 
 nav div.landmarks {
-    width: 100%;
+    width: 200px;
+    padding: 8px;
+    margin-left: 6px;
+
     display: flex;
     flex-direction: column;
-    gap: 24px;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    gap: 24px;
 }
 
 nav div.landmarks button {
@@ -152,13 +166,19 @@ nav div.landmarks button {
     border: none;
 }
 
-main.nav-visible section {
-    margin-left: 80px;
+nav div.landmarks p {
+    width: 100px;
+    position: absolute;
+    top: 50%;
+    left: 64px;
+    transform: translateY(-50%);
+
+    text-align: left;
+    font-size: 16px;
 }
 
-nav {
-    transition-property: top, left;
-    transition-duration: 0.5s;
+main.nav-visible section {
+    margin-left: 80px;
 }
 
 section {
@@ -168,7 +188,7 @@ section {
 @media (max-width: 630px) {
     nav {
         left: 0px;
-        top: -64px;
+        top: -80px;
         height: 64px;
         width: 100vw;
 
@@ -177,18 +197,28 @@ section {
         align-items: center;
     }
 
+    /* Disable the regular hover effect, just do nothing now */
+    nav:hover {
+        width: 100vw;
+    }
+
     main.nav-visible nav {
         top: 0px;
     }
 
-    nav div.color-toggle {
+    /* If I do dark / light mode in the future */
+    /* nav div.color-toggle {
         width: 62px;
         height: fit-content;
-    }
+    } */
 
     nav div.landmarks {
         flex-direction: row;
-        width: fit-content;
+        max-width: fit-content;
+    }
+
+    nav div.landmarks p {
+        display: none;
     }
 
     section, main.nav-visible section {
@@ -207,18 +237,20 @@ section.about-me {
     padding: 48px;
 }
 
+section.about-me > * {
+    flex: 1;
+}
+
 section.about-me div.my-info {
-    width: 50%;
-    flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
     gap: 24px;
+    padding: 16px;
 }
 
 section.about-me div.gallery {
-    flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -229,16 +261,19 @@ div.gallery div.image-selector {
     justify-content: center;
     align-items: center;
     gap: 24px;
+    flex-grow: 1;
 
+    padding: 16px;
     margin-bottom: 24px;
 }
 
 div.image-selector button {
-    width: 32px;
+    flex-basis: 32px;
     height: 32px;
 }
 
-div.image-selector span.images {
+div.image-selector div.img {
+    flex-basis: 0px;
     flex-grow: 1;
     text-align: center;
 }
@@ -258,6 +293,14 @@ div.image-selector span.images img.selected {
 div.description {
     padding: 16px;
     height: 8em;
+}
+
+div.description p {
+    display: none;
+}
+
+div.description p.visible {
+    display: initial;
 }
 
 section.about-me > h2 {
@@ -338,6 +381,7 @@ div.rotating-tech-skills span.tech-skills {
 span.tech-skills img {
     width: 128px;
     height: 128px;
+    border: 1px solid yellow;
 }
 
 span.tech-skills img[data-skill="python"] {
@@ -376,6 +420,13 @@ div.rotating-tech-skills span.tech-skills:nth-of-type(3)
     animation-duration: 30s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+    animation-play-state: running;
+}
+
+/* div.rotating-tech-skills:hover span.tech-skills, */
+div.rotating-tech-skills:has(span.tech-skills .selected) span.tech-skills
+{
+    animation-play-state: paused;
 }
 
 @keyframes rotate-skills {
@@ -415,7 +466,6 @@ section.projects {
 
 section.projects h2 {
     text-align: center;
-    margin-top: 80px;
     margin-bottom: 48px;
 }
 
@@ -438,13 +488,19 @@ section.projects div.all-projects {
     }
 }
 
+/******************/
+/* FILLER SECTION */
+/******************/
+section.filler {
+    padding: 48px;
+}
+
 /**********************/
 /* CONTACT ME SECTION */
 /**********************/
 
 section.contact-me {
-    margin: 48px;
-    margin-left: 80px;
+    padding: 48px;
 }
 
 section.contact-me h2 {
