@@ -1,0 +1,399 @@
+:root {
+    --dark: #191919;
+    --primary: #242422; 
+    --secondary: #44463f; 
+    --tertiary: #696D71;
+    --accent-1: #d67f1b; 
+    --accent-2: #B3DB44; 
+    --accent-3: #E2DA7A; 
+
+    --text: #FEFEFE; 
+    --icon: #FEFEFE; 
+    --icon-off: #696D71; 
+
+    --white: #EEEEEE;
+    --black: #161616;
+
+    --font-1: 'Rubik', basic-sans, sans-serif;
+    --font-2: 'Inter', sans-serif;
+    --font-3: 'Inter Tight', sans-serif; 
+    --font-4: 'Roboto Mono', basic-sans, sans-serif;
+
+    --fs-1: 1em;
+    --fs-2: 2em;
+    --fs-3: 3em;
+    --fs-4: 4em;
+
+    --fw-b: 600;
+
+    --shadow: 0px 0px 15px black;
+}
+
+/* Set the colors for light mode */
+/* 
+body.light {
+
+} 
+*/
+
+body {
+    background-color: var(--primary);
+    color: var(--text);
+}
+
+/******************/
+/* HEADER SECTION */
+/******************/
+
+header,
+header div.info,
+header div.buttons,
+header div.visits,
+header div.btn-1,
+header div.btn-2
+{
+    border: none;
+}
+
+header {
+    gap: 32px;
+    /* background: linear-gradient(to bottom, var(--secondary), var(--primary)); */
+    border: none;
+}
+
+header h2 {
+    font-size: var(--fs-4);
+    font-family: var(--font-1);
+}
+
+header h3 {
+    font-size: var(--fs-2);
+    font-family: var(--font-1);
+}
+
+header p {
+    font-size: var(--fs-1);
+    font-family: var(--font-4);
+}
+
+header button {
+    font-size: var(--fs-1);
+    font-family: var(--font-2);
+}
+
+header strong {
+    color: var(--accent-1);
+    font-weight: var(--fw-b);
+}
+
+header a {
+    color: var(--accent-1);
+    font-size: var(--fs-1);
+    font-weight: var(--fw-b);
+    text-decoration: none;
+}
+
+header a:visited {
+    color: var(--accent-2);
+}
+
+header div.btn-1 button {
+    border: none;
+    background-color: var(--accent-1);
+    color: var(--white);
+
+    font-size: var(--fs-1);
+    font-family: var(--font-2);
+    font-weight: 700;
+
+    transition: all .5s;
+}
+
+header div.btn-2 button {
+    background-color: var(--primary);
+    border: 1px solid var(--white);
+    color: var(--white);
+
+    font-size: var(--fs-1);
+    font-family: var(--font-1);
+    font-weight: 700;
+
+    transition: all .5s;
+}
+
+/**********/
+/* NAVBAR */
+/**********/
+
+nav,
+div.color-toggle,
+div.landmarks
+{
+    border: none;
+}
+
+nav {
+    background-color: var(--dark);
+    border-right: 1px solid var(--tertiary);
+    /* box-shadow: var(--shadow); */
+}
+
+div.color-toggle {
+    background-color: var(--primary);
+    /* border: 1px solid var(--tertiary); */
+    border-radius: 16px;
+}
+
+div.landmarks {
+    border: none;
+}
+
+div.landmarks button {
+    color: var(--icon-off);
+}
+
+div.landmarks button:hover {
+    color: var(--icon);
+}
+
+@media (max-width: 630px) {
+    nav {
+        border-right: none;
+        border-bottom: 1px solid var(--tertiary);
+    }
+}
+
+/********************/
+/* ABOUT ME SECTION */
+/********************/
+
+section.about-me,
+div.my-info,
+div.gallery,
+div.gallery div.img,
+div.image-selector,
+div.description
+{
+    border: none;
+}
+
+/* div.my-info,
+div.image-selector, */
+div.description
+{
+    background-color: var(--dark);
+    border: 1px solid var(--tertiary);
+    /* box-shadow: var(--shadow); */
+    border-radius: 8px;
+}
+
+section.about-me p {
+    font-size: var(--fs-1);
+    font-family: var(--font-3);
+}
+
+section.about-me h2 {
+    font-size: var(--fs-2);
+    font-family: var(--font-1);
+}
+
+div.my-info h3 {
+    font-size: var(--fs-1);
+    font-family: var(--font-1);
+    color: var(--accent-1);
+}
+
+div.image-selector button {
+    border: none;
+    border-radius: 8px;
+    background-color: var(--accent-1);
+    color: var(--text);
+    transition: all .2s;
+}
+
+div.image-selector button:hover {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+/******************/
+/* SKILLS SECTION */
+/******************/
+
+section.skills,
+section.skills div,
+div.rotating-tech-skills, 
+div.rotating-tech-skills img
+{
+    border: none
+}
+
+/*
+section.skills {
+    border-top: 1px solid var(--tertiary);
+    border-bottom: 1px solid var(--tertiary);
+    background-color: var(--dark);
+}
+*/
+
+section.skills h2 {
+    font-size: var(--fs-2);
+    font-family: var(--font-1);
+}
+
+section.skills p {
+    font-size: var(--fs-1);
+    font-family: var(--font-2);
+}
+
+div.rotating-tech-skills {
+    background-color: var(--primary);
+}
+
+div.rotating-tech-skills img {
+    border: 1px solid var(--tertiary);
+    border-radius: 8px;
+    background-color: var(--secondary);
+}
+
+div.rotating-tech-skills img.selected {
+    box-shadow: var(--shadow);
+}
+
+/********************/
+/* PROJECTS SECTION */
+/********************/
+section.projects,
+section.projects div
+{
+    border: none;
+}
+
+section.projects h2 {
+    font-size: var(--fs-2);
+    font-family: var(--font-1);
+}
+
+section.projects div.project {
+    border: 1px solid var(--tertiary);
+    background-color: var(--dark);
+}
+
+div.project h2 {
+    font-size: var(--fs-1);
+    font-family: var(--font-1);
+}
+
+div.project p.skills {
+    font-size: var(--fs-1);
+    font-family: var(--font-2);
+}
+
+div.project p.skills span {
+    background-color: var(--accent-1);
+    transition: all .5s;
+}
+
+div.project p.skills span:hover {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+div.project p.desc {
+    font-size: var(--fs-1);
+    font-family: var(--font-3);
+}
+
+div.project div.links a {
+    text-decoration: none;
+}
+
+div.project div.links i {
+    color: var(--icon);
+}
+
+/******************/
+/* FILLER SECTION */
+/******************/
+section.filler {
+    border: none;
+    border-top: 1px solid var(--tertiary);
+    border-bottom: 1px solid var(--tertiary);
+    background-color: var(--dark);
+}
+
+/**********************/
+/* CONTACT ME SECTION */
+/**********************/
+section.contact-me,
+section.contact-me div.info
+{
+    border: none;
+}
+
+section.contact-me h2 {
+    font-size: var(--fs-2);
+    font-family: var(--font-1);
+}
+
+section.contact-me form input,
+section.contact-me form textarea 
+{
+    font-size: var(--fs-1);
+    font-family: var(--font-2);
+}
+
+section.contact-me form input[type='submit'] {
+    font-size: var(--fs-1);
+    border-radius: 8px;
+    border: none;
+    background-color: var(--accent-2);
+    /* transition: all .5s; */
+} 
+
+section.contact-me form input[type='submit']:hover {
+    color: var(--black);
+    background-color: var(--white);
+} 
+
+div.info h3 {
+    font-size: var(--fs-1);
+    font-family: var(--font-1);
+}
+
+div.info p {
+    font-size: var(--fs-1);
+    font-family: var(--font-2);
+}
+
+/******************/
+/* FOOTER SECTION */
+/******************/
+
+footer {
+    border: none;
+    background: var(--black);
+    border-top: var(--dark);
+}
+
+footer h2 {
+    font-size: var(--fs-2);
+    font-family: var(--font-1);
+}
+
+footer p {
+    font-size: var(--fs-1);
+    font-family: var(--font-2);
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer a i {
+    color: var(--icon-off);
+}
+
+footer a i:hover {
+    color: var(--icon);
+}

@@ -1,0 +1,229 @@
+/* Solarized light */
+
+:root {
+    --font-0: basic-sans, sans-serif;
+    --font-1: 'Rubik', basic-sans, sans-serif; /* Use */
+    --font-2: 'Karla', sans-serif;
+    --font-3: 'Inter', sans-serif; /* Use */
+    --font-4: 'Inter Tight', sans-serif; /* Use */
+    --font-5: 'Poppins', basic-sans, sans-serif;
+    --font-6: 'Roboto Mono', basic-sans, sans-serif; /* Use */
+
+    --div-bg-1: hsl(75, 7%, 14%);
+    --div-bg-2: rgb(230, 230, 230);
+
+    --primary-dark: #feebb2; /* Use */
+    --secondary-dark: #d8ab7f; /* Use */
+    --tertiary: #6E6E6D; /* Use */
+    --icon-dark: #37393B; /* Use */
+    --orange: #A88820; /* Use */
+    --green: #5FA198; /* Use */
+    --red: #CA2C6B;
+    --blue: #91D8EE;
+    --yellow: #A69C5B; /* Use */
+
+    --primary-light: #FEFEFE;
+    --secondary-light: #EEF0F2;
+    --icon-light: #161B1E;
+
+    --black: #EEEEEE;
+    --white: #161616;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    /* background: var(--gradient-1-dark); */
+    background: var(--primary-dark);
+
+    /* animation-name: bg-anim;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    animation-iteration-count: infinite; */
+}
+
+div.bg {
+    width: 100vw;
+    height: 100vh;
+    /* background: linear-gradient(to bottom right, #efcb60, #7ED957, #0CC0DF);  */
+    /* to right, hsl(80, 7%, 9%), blue, hsl(75, 7%, 30%) */
+    /* background-color: #033B3D; */
+    background: linear-gradient(to bottom right, var(--secondary-dark), var(--primary-dark), var(--primary-dark));
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    /* color: rgb(230, 230, 230); */
+
+}
+
+h2 {
+    font-size: 2em;
+    font-family: var(--font-1);
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 4em;
+    font-family: var(--font-1);
+    margin-bottom: 1rem;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(-1deg);
+    }
+
+    100% {
+        transform: rotate(1deg);
+    }
+}
+
+p {
+    font-family: var(--font-6);
+    margin-bottom: 1rem;
+}
+
+h2, h3, p {
+    text-shadow: 0px 0px 15px var(--orange);
+}
+
+@keyframes bg-anim {
+    0% {
+        background-position: left;
+    }
+
+    100% {
+        background-position: right;
+    }
+}
+
+/* div.element {
+    margin: 16px;
+    padding: 48px;
+    width: fit-content;
+    background: var(--gradient-2);
+    border-radius: 16px;
+    border: 1px solid rgb(180, 180, 180);
+    text-align: center;
+    box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.5);
+} */
+
+div.element {
+    margin: 16px;
+    padding: 48px;
+    width: fit-content;
+    /* background: hsl(75, 7%, 14%); */
+    /* background: rgb(230, 230, 230); */
+    /* background: #073e4b; */
+    border-radius: 16px;
+    /* border: 1px solid rgb(180, 180, 180); */
+    /* border: none; */
+    text-align: center;
+    box-shadow: 0px 0px 15px var(--yellow);
+
+    background-color: var(--primary-dark); /* Light grey */
+    border: 1px solid var(--tertiary); /* Circular border color matching the palette */
+    color: var(--white); /* Text color matching the palette */
+
+    /* background-color: #d4e6e7; Muted pastel teal */
+    /* border: 2px solid #0D4A3A; Circular border color matching the palette */
+    /* color: #0D4A3A; Text color matching the palette */
+
+    /* background-color: #ffa07a; Light coral */
+    /* border: 2px solid #526126; Circular border color matching the palette */
+    /* color: #526126; Text color matching the palette */
+}
+
+/* div.element:hover {
+    border: 1px solid white;
+} */
+
+div.element h2,
+div.element h3,
+div.element p
+{
+    /* color: white; */
+    /* color: rgb(230, 230, 230); */
+    /* color: hsl(75, 7%, 14%); */
+    color: var(--white);
+    text-shadow: none;
+}
+
+div.element h2 {
+    font-size: 1.25em;
+    font-family: var(--font-1);
+    /* color: var(--green); */
+    color: var(--orange);
+}
+
+div.element h3 {
+    font-size: 1.15em;
+    font-family: var(--font-1);
+    color: var(--green);
+}
+
+div.element p {
+    font-family: 'Inter Tight', basic sans, sans-serif;
+}
+
+button {
+    border-radius: 16px;
+    /* border: 1px solid rgb(180, 180, 180); */
+    border: none;
+    background-color: var(--orange);
+    color: white;
+    padding: .5rem 2rem;
+    margin: .5rem;
+
+    font-size: 1em;
+    font-family: var(--font-3);
+    font-weight: 700;
+
+    transition: all .5s;
+}
+
+button:hover,
+button:active 
+{
+    background-color: white;
+    color: var(--yellow);
+    cursor: pointer;
+
+    transform: translate(-3px, -3px);
+    box-shadow: 3px 3px 15px var(--yellow);
+}
+
+button.btn-2 {
+    background-color: var(--primary-dark);
+    border: 1px solid var(--white);
+    color: var(--white);
+
+    font-size: 1em;
+    font-family: 'Inter', basic sans, sans-serif;
+    font-weight: 700;
+
+    transition: all .5s;
+}
+
+button.btn-2:hover,
+button.btn-2:active 
+{
+    background-color: var(--green);
+    border-color: var(--green);
+    color: var(--black);
+    transform: translate(-3px, -3px);
+    box-shadow: 3px 3px 15px var(--yellow);
+    cursor: pointer;
+}
+
+strong {
+    color: var(--yellow);
+}

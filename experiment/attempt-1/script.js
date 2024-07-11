@@ -1,10 +1,22 @@
+const body = document.querySelector('body');
 const main = document.querySelector('main');
+
+// Sections
+const aboutMeSection = document.querySelector('section.about-me');
+const skillsSection = document.querySelector('section.skills');
 const projectSection = document.querySelector('section.projects');
-const contactSection = document.querySelector('section.contact-me');
+const contactMeSection = document.querySelector('section.contact-me');
 
 // Hero section
 const projectBtn = document.querySelector('div.portfolio-btn');
 const contactBtn = document.querySelector('div.contact-btn');
+
+// Nav bar
+const colorToggle = document.querySelector('div.color-toggle button');
+const aboutMeBtn = document.querySelector('div.landmarks button.about-me');
+const skillsBtn = document.querySelector('div.landmarks button.skills');
+const projectsBtn = document.querySelector('div.landmarks button.projects');
+const contactMeBtn = document.querySelector('div.landmarks button.contact-me');
 
 // About Me
 const aboutMeImages = document.querySelectorAll('div.image-selector span.images img');
@@ -61,15 +73,15 @@ function delay(ms) {
 }
 
 // Nav bar
-function changeNavVisibility() {
-    const mainY = main.getBoundingClientRect().top;
+// function changeNavVisibility() {
+//     const mainY = main.getBoundingClientRect().top;
 
-    if(mainY <= window.innerHeight / 2) {
-        main.classList.add('nav-visible');
-    } else {
-        main.classList.remove('nav-visible');
-    }
-}
+//     if(mainY <= window.innerHeight / 2) {
+//         main.classList.add('nav-visible');
+//     } else {
+//         main.classList.remove('nav-visible');
+//     }
+// }
 
 // About me section
 function changeAboutImage(newIndex) {
@@ -85,27 +97,31 @@ function changeAboutImage(newIndex) {
     currentLabel.classList.add('visible');
 }
 
+function scrollToSection(section) {
+    window.scrollTo({
+        top: section.getBoundingClientRect().top + window.scrollY,
+        behavior: 'smooth'
+    });
+}
+
 /*******************/
 /* EVENT LISTENERS */
 /*******************/
 
 // Hero section
-projectBtn.addEventListener('click', () => {
-    window.scrollTo({
-        top: projectSection.getBoundingClientRect().top,
-        behavior: 'smooth'
-    });
-});
-
-contactBtn.addEventListener('click', () => {
-    window.scrollTo({
-        top: contactSection.getBoundingClientRect().top,
-        behavior: 'smooth'
-    });
-});
+projectBtn.addEventListener('click', () => scrollToSection(projectSection));
+contactBtn.addEventListener('click', () => scrollToSection(contactMeSection));
 
 // Nav bar
-window.addEventListener('scrollend', changeNavVisibility);
+// window.addEventListener('scrollend', changeNavVisibility);
+colorToggle.addEventListener('click', () => {
+    body.classList.toggle('light');
+    body.classList.toggle('dark');
+});
+aboutMeBtn.addEventListener('click', () => scrollToSection(aboutMeSection));
+skillsBtn.addEventListener('click', () => scrollToSection(skillsSection));
+projectsBtn.addEventListener('click', () => scrollToSection(projectSection));
+contactMeBtn.addEventListener('click', () => scrollToSection(contactMeSection));
 
 // About me section
 leftImageBtn.addEventListener('click', () => {
@@ -148,4 +164,4 @@ allSkills.forEach(skill => {
 /******************/
 
 // In case the window starts under the hero section
-changeNavVisibility(); 
+// changeNavVisibility(); 

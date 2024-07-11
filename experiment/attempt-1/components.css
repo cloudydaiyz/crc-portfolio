@@ -32,7 +32,7 @@ div.btn-1 button:nth-of-type(2) {
     border-bottom-right-radius: 8px;
     border-left: none;
 
-    transition-property: transform;
+    transition-property: all;
     transition-duration: 0.2s;
 }
 
@@ -49,7 +49,7 @@ div.btn-1 button:nth-of-type(3) {
     border-bottom-left-radius: 8px;
     border-right: none;
 
-    transition-property: transform;
+    transition-property: all;
     transition-duration: 0.2s;
 }
 
@@ -80,7 +80,7 @@ div.btn-2 button:nth-of-type(2) {
     transform: translateX(-8px);
     color: transparent;
 
-    transition-property: transform;
+    transition-property: all;
     transition-duration: 0.2s;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;

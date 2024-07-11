@@ -21,6 +21,8 @@ header {
     align-items: center;
     gap: 24px;
     padding: 48px;
+
+    margin-bottom: 64px;
 }
 
 section {
@@ -107,20 +109,21 @@ nav:hover {
     width: 200px;
 }
 
-main.nav-visible nav {
+body.nav-visible nav {
     left: 0px;
 }
 
+/* Dark / light mode toggle */
 nav div.color-toggle {
     width: 62px;
+    padding: 4px;
 }
 
-/* If I do dark / light mode in the future */
-/* 
 div.color-toggle button {
     width: 24px;
     height: 24px;
     border-radius: 50%;
+    border: 1px solid black;
     font-size: 16px;
     position: relative;
 
@@ -128,24 +131,33 @@ div.color-toggle button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    transition: all .3s;
+}
+
+div.color-toggle button.light {
+    left: 0px;
+}
+
+body.dark div.color-toggle button {
+    left: 26px;
 }
 
 div.color-toggle button i {
     position: absolute;
 }
 
-div.color-toggle button.light i.fa-moon, 
-div.color-toggle button.dark i.fa-sun 
+body.light div.color-toggle button i.fa-moon, 
+body.dark div.color-toggle button i.fa-sun 
 {
     display: none;
 }
 
-div.color-toggle button.light i.fa-sun, 
-div.color-toggle button.dark i.fa-moon 
+body.light div.color-toggle button i.fa-sun, 
+body.dark div.color-toggle button i.fa-moon 
 {
     display: initial;
 } 
-*/
 
 nav div.landmarks {
     width: 200px;
@@ -177,7 +189,9 @@ nav div.landmarks p {
     font-size: 16px;
 }
 
-main.nav-visible section {
+body.nav-visible section,
+body.nav-visible header
+{
     margin-left: 80px;
 }
 
@@ -202,7 +216,7 @@ section {
         width: 100vw;
     }
 
-    main.nav-visible nav {
+    body.nav-visible nav {
         top: 0px;
     }
 
@@ -221,7 +235,7 @@ section {
         display: none;
     }
 
-    section, main.nav-visible section {
+    section, body.nav-visible section, body.nav-visible header {
         margin-left: inherit;
     }
 }
@@ -235,6 +249,8 @@ section.about-me {
     display: flex;
     gap: 48px;
     padding: 48px;
+
+    margin-bottom: 64px;
 }
 
 section.about-me > * {
@@ -363,12 +379,16 @@ section.about-me > h2 {
 
 section.skills {
     min-height: fit-content;
+
+    display: flow-root;
+    margin-top: 192px;
 }
 
 section.skills div.rotating-tech-skills {
     display: flex;
     gap: 128px;
     margin-bottom: 48px;
+    padding: 16px 0px;
     overflow: hidden;
 }
 
@@ -382,6 +402,7 @@ span.tech-skills img {
     width: 128px;
     height: 128px;
     border: 1px solid yellow;
+    padding: 8px;
 }
 
 span.tech-skills img[data-skill="python"] {
@@ -462,6 +483,7 @@ div.rotating-tech-skills:has(span.tech-skills .selected) span.tech-skills
 
 section.projects {
     padding: 48px;
+    margin-top: 192px;
 }
 
 section.projects h2 {
@@ -514,6 +536,8 @@ section.contact-me {
     align-items: center;
     min-height: 50vh;
     gap: 48px;
+
+    margin-top: 192px;
 }
 
 section.contact-me * {
@@ -583,6 +607,8 @@ footer {
     position: relative;
     height: 50vh;
     padding: 16px;
+
+    margin-top: 192px;
 }
 
 footer h2 {
