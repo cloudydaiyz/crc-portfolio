@@ -1,0 +1,348 @@
+*, *::before, *::after {
+    margin: 0px;
+    padding: 0px;
+    /* box-sizing: border-box; */
+}
+
+:root {
+    --font-1: 'Rubik', basic-sans, sans-serif; /* Use */
+    --font-2: 'Inter Tight', sans-serif; /* Use */
+    --font-3: 'Roboto Mono', basic-sans, sans-serif; /* Use */
+
+    /* Colors inspired by Monokai  */
+    --primary: #242422; /* Use */
+    --secondary: #44463f; /* Use */
+    --tertiary: #696D71; /* Use */
+    --icon: #FEFEFE; /* Use */
+    --accent-1: #d67f1b; /* Use */
+    --accent-2: #B3DB44; /* Use */
+
+    --div-bg-1: hsl(75, 7%, 14%);
+    --div-bg-2: rgb(230, 230, 230);
+
+    --primary-light: #FEFEFE;
+    --secondary-light: #EEF0F2;
+    --icon-light: #161B1E;
+
+    --black: #161616;
+    --white: #EEEEEE;
+
+    /* Spacing */
+    --space-1: 2rem;
+    --space-2: 5rem;
+    --space-3: 10rem;
+}
+
+section, nav {
+    border: 1px solid blue;
+}
+
+div {
+    border: 1px solid red;
+}
+
+span {
+    border: 1px solid green;
+}
+
+/**********/
+/* HEADER */
+/**********/
+header {
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-1);
+
+    margin-bottom: var(--space-2);
+}
+
+/**********/
+/* NAVBAR */
+/**********/
+nav {
+    margin-bottom: var(--space-1);
+    /* position: sticky; */
+    top: 0;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/********************/
+/* ABOUT ME SECTION */
+/********************/
+section.about-me {
+    height: 100vh;
+    padding: var(--space-1);
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+}
+
+section.about-me > * {
+    flex: 1;
+}
+
+section.about-me .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-1);
+    padding: var(--space-1);
+
+    height: fit-content;
+}
+
+.work-info {
+    display: grid;
+    width: 100%;
+    max-width: 100%;
+    grid-template-columns: repeat(2, auto);
+    gap: var(--space-1);
+}
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-1);
+}
+
+.image-selector {
+    aspect-ratio: 1 / 1;
+    width: 70%;
+    height: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-selector img {
+    width: 100%;
+    height: auto;
+    display: none;
+}
+
+.image-selector img.selected {
+    display: initial;
+    animation: img-fade-in 1s ease-out;
+}
+
+@keyframes img-fade-in {
+    0% {
+        width: 75%;
+        opacity: 0;
+    }
+
+    100% {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+.image-info {
+    width: 100%;
+    padding: var(--space-1);
+    box-sizing: border-box;
+}
+
+.image-info .description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: var(--space-1);
+}
+
+.image-info .description p {
+    display: none;
+}
+
+.image-info .description p.selected {
+    display: initial;
+}
+
+.image-info span {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/****************************/
+/* TECHNICAL SKILLS SECTION */
+/****************************/
+section.skills {
+    padding-top: var(--space-2);
+    padding-bottom: var(--space-2);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    gap: var(--space-1);
+}
+
+.skill-images {
+    display: flex;
+    justify-content: initial;
+
+    gap: var(--space-3);
+    padding-top: var(--space-1);
+    padding-bottom: var(--space-1);
+}
+
+.skill-images .skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-1);
+}
+
+.image-set {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-3);
+    animation: rotate-skills 20s linear infinite;
+}
+
+@keyframes rotate-skills {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(calc(-100% - var(--space-3)));
+    }
+}
+
+/********************/
+/* PROJECTS SECTION */
+/********************/
+section.projects {
+    padding: var(--space-1);
+    padding-top: var(--space-3);
+    padding-bottom: var(--space-3);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-1);
+}
+
+.all-projects {
+    width: 100%;
+
+    display: flex;
+    gap: var(--space-3);
+    overflow-x: scroll;
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.project a img {
+    aspect-ratio: 1 / 1;
+    width: 32rem;
+    height: auto;
+}
+
+.project .skills, .project .links {
+    display: flex;
+    gap: 1rem;
+}
+
+/**********************/
+/* CONTACT ME SECTION */
+/**********************/
+section.contact-me {
+    padding: var(--space-1);
+    padding-top: var(--space-3);
+    padding-bottom: var(--space-3);
+    min-height: 50vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-1);
+}
+
+section.contact-me form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+section.contact-me div,
+section.contact-me input, 
+section.contact-me textarea
+{
+    width: 100%;
+    padding: .5rem 1rem;
+    margin-bottom: .5rem;
+    box-sizing: border-box;
+}
+
+form div::before {
+    display: inline-block;
+    position: absolute;
+    transform: translate(1rem, 0rem);
+    opacity: 0;
+    transition: all .2s;
+}
+
+form div:has(input.has-value)::before,
+form div:has(textarea.has-value)::before
+{
+    transform: translate(1rem, -.5rem);
+    opacity: 1;
+}
+
+form .first-name::before {
+    content: 'Name';
+}
+
+form .email::before {
+    content: 'Email';
+}
+
+form .message::before {
+    content: 'Message';
+}
+
+section.contact-me textarea {
+    resize: none;
+}
+
+section.contact-me button {
+    padding: .5rem 3rem;
+}
+
+/******************/
+/* FOOTER SECTION */
+/******************/
+footer {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .links {
+    display: flex;
+    gap: 2rem;
+}
