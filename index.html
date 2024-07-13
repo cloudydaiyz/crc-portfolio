@@ -7,6 +7,10 @@
     <link rel="shortcut icon" href="assets/briefcase-solid.svg" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
     <script src="https://kit.fontawesome.com/f027ff6638.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -16,8 +20,14 @@
             <span class="first-name">KYLAN</span>
             <span class="last-name">DUNCAN</span>
         </h3>
-        <p class="title">Full Stack Developer<span class="cursor">|</span></p>
-        <p class="web-visits">Website visits: idk yet<span class="cursor">|</span></p>
+        <!-- Full Stack Developer -->
+        <p class="title"><span class="cursor rest">|</span></p>
+        <!-- Website visits: idk yet -->
+        <p class="web-visits"><span class="cursor rest">|</span></p>
+        <button class="down">
+            <i class="fa-regular fa-circle-down"></i>
+            <i class="fa-solid fa-circle-down"></i>
+        </button>
     </header>
     <main>
         <nav>
@@ -25,43 +35,45 @@
                 <span class="brand-name">cloudydaiyz</span>
             </h2>
             <span class="sections">
-                <button class="about-me">about me</button>
+                <button class="about-me enabled">about me</button>
                 <button class="skills">skills</button>
                 <button class="projects">projects</button>
                 <button class="contact-me">contact me</button>
-                <button class="mode-toggle light"></button>
+                <button class="dropdown">
+                    <i class="fa-regular fa-square-caret-down"></i>
+                    <i class="fa-solid fa-square-caret-down"></i>
+                </button>
             </span>
+            <div class="mobile dropdown">
+                <button class="about-me enabled">about me</button>
+                <button class="skills">skills</button>
+                <button class="projects">projects</button>
+                <button class="contact-me">contact me</button>
+            </div>
         </nav>
         <section class="about-me">
-            <div class="info">
-                <h2>About Me</h2>
-                <p>I am a full stack developer, fueled by continous learning and a passion of creating innovative software. As a previous student of the University of Texas at Austin and a software engineer with previous intern experience at Amazon, Cummins, and Ansys, I bring a unique blend of experience, spanning from full stack development, project management, and mentorship. I'm eager to put my skills and knowledge to use by creating innovative, efficient, and reliable solutions to real-world problems.</p>
-                <div class="work-info">
-                    <span class="info-item">
-                        <h3>Name</h3>
-                        <p>Kylan Duncan</p>
-                    </span>
-                    <span class="info-item">
-                        <h3>Preferred Work Location</h3>
-                        <p>Houston, TX or Remote</p>
-                    </span>
-                    <span class="info-item">
-                        <h3>Email</h3>
-                        <p>kyland03.biz@gmail.com</p>
-                    </span>
-                    <span class="info-item">
-                        <h3>Employment</h3>
-                        <p>Open</p>
-                    </span>
-                </div>
-            </div>
-            <div class="gallery">
-                <div class="image-selector">
-                    <img src="assets/images/headshot.png" alt="Picture of me" class="selected">
-                    <img src="assets/images/linkedin-1.jpeg" alt="Picture of me">
-                    <img src="assets/images/linkedin-2.jpeg" alt="Picture of me">
-                    <img src="assets/images/linkedin-3.jpeg" alt="Picture of me">
-                    <img src="assets/images/linkedin-4.jpeg" alt="Picture of me">
+            <div class="info-dump">
+                <div class="info">
+                    <h2>About Me</h2>
+                    <p>I am a full stack developer, fueled by continous learning and a passion of creating innovative software. As a previous student of the University of Texas at Austin and a software engineer with previous intern experience at Amazon, Cummins, and Ansys, I bring a unique blend of experience, spanning from full stack development, project management, and mentorship. I'm eager to put my skills and knowledge to use by creating innovative, efficient, and reliable solutions to real-world problems.</p>
+                    <div class="work-info">
+                        <span class="info-item">
+                            <h3>Name</h3>
+                            <p>Kylan Duncan</p>
+                        </span>
+                        <span class="info-item">
+                            <h3>Preferred Work Location</h3>
+                            <p>Houston, TX or Remote</p>
+                        </span>
+                        <span class="info-item">
+                            <h3>Email</h3>
+                            <p>kyland03.biz@gmail.com</p>
+                        </span>
+                        <span class="info-item">
+                            <h3>Employment</h3>
+                            <p>Open</p>
+                        </span>
+                    </div>
                 </div>
                 <div class="image-info">
                     <div class="description">
@@ -77,6 +89,13 @@
                         <button class="next">next</button>
                     </span>
                 </div>
+            </div>
+            <div class="image-selector">
+                <img src="assets/images/headshot.png" alt="Picture of me" class="selected">
+                <img src="assets/images/linkedin-1.jpeg" alt="Picture of me">
+                <img src="assets/images/linkedin-2.jpeg" alt="Picture of me">
+                <img src="assets/images/linkedin-3.jpeg" alt="Picture of me">
+                <img src="assets/images/linkedin-4.jpeg" alt="Picture of me">
             </div>
         </section>
         <section class="skills">
@@ -197,87 +216,94 @@
                     </div>
                 </span>
             </div>
-            <p>Click to view the name of each skill</p>
         </section>
         <section class="projects">
             <h2>Projects</h2>
             <div class="all-projects">
                 <div class="project">
-                    <a href="https://github.com/cloudydaiyz/membership-logger">
+                    <a target="_blank" href="https://github.com/cloudydaiyz/membership-logger">
                         <img src="assets/projects/interactive-comments.png" alt="Interactive comments project">
                     </a>
-                    <h3>Membership Logger</h3>
-                    <p>This project is blah blah blah.</p>
-                    <span class="skills">
-                        <h4>Backend</h4>
-                        <h4>TypeScript</h4>
-                        <h4>express.js</h4>
-                        <h4>Docker</h4>
-                    </span>
-                    <span class="links">
-                        <a href="https://github.com/cloudydaiyz/membership-logger" class="github">
-                            <i class="fa-brands fa-github"></i>
-                        </a>
-                    </span>
+                    <div class="proj-info">
+                        <h3>Membership Logger</h3>
+                        <p>This project is blah blah blah.</p>
+                        <span class="skills">
+                            <h4>Backend</h4>
+                            <h4>TypeScript</h4>
+                            <h4>express.js</h4>
+                            <h4>Docker</h4>
+                        </span>
+                        <span class="links">
+                            <a target="_blank" href="https://github.com/cloudydaiyz/membership-logger" class="github">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                        </span>
+                    </div>
                 </div>
                 <div class="project">
-                    <a href="https://github.com/cloudydaiyz/deep-interest-validator">
+                    <a target="_blank" href="https://github.com/cloudydaiyz/deep-interest-validator">
                         <img src="assets/projects/interactive-comments.png" alt="Interactive comments project">
                     </a>
-                    <h3>Deep Interest Validator</h3>
-                    <p>This project is blah blah blah.</p>
-                    <span class="skills">
-                        <h4>Backend</h4>
-                        <h4>JavaScript</h4>
-                        <h4>Cohere AI</h4>
-                    </span>
-                    <span class="links">
-                        <a href="https://github.com/cloudydaiyz/deep-interest-validator" class="github">
-                            <i class="fa-brands fa-github"></i>
-                        </a>
-                    </span>
+                    <div class="proj-info">
+                        <h3>Deep Interest Validator</h3>
+                        <p>This project is blah blah blah.</p>
+                        <span class="skills">
+                            <h4>Backend</h4>
+                            <h4>JavaScript</h4>
+                            <h4>Cohere AI</h4>
+                        </span>
+                        <span class="links">
+                            <a target="_blank" href="https://github.com/cloudydaiyz/deep-interest-validator" class="github">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                        </span>
+                    </div>
                 </div>
                 <div class="project">
-                    <a href="https://github.cloudydaiyz.com/interactive-comments-section-main/">
+                    <a target="_blank" href="https://github.cloudydaiyz.com/interactive-comments-section-main/">
                         <img src="assets/projects/interactive-comments.png" alt="Interactive comments project">
                     </a>
-                    <h3>Interactive Comments Section</h3>
-                    <p>This project is blah blah blah.</p>
-                    <span class="skills">
-                        <h4>Frontend</h4>
-                        <h4>HTML</h4>
-                        <h4>CSS</h4>
-                        <h4>TypeScript</h4>
-                    </span>
-                    <span class="links">
-                        <a href="https://github.cloudydaiyz.com/interactive-comments-section-main/" class="demo">
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                        </a>
-                        <a href="https://github.com/cloudydaiyz/interactive-comments-section-main" class="github">
-                            <i class="fa-brands fa-github"></i>
-                        </a>
-                    </span>
+                    <div class="proj-info">
+                        <h3>Interactive Comments Section</h3>
+                        <p>This project is blah blah blah.</p>
+                        <span class="skills">
+                            <h4>Frontend</h4>
+                            <h4>HTML</h4>
+                            <h4>CSS</h4>
+                            <h4>TypeScript</h4>
+                        </span>
+                        <span class="links">
+                            <a target="_blank" href="https://github.cloudydaiyz.com/interactive-comments-section-main/" class="demo">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                            <a target="_blank" href="https://github.com/cloudydaiyz/interactive-comments-section-main" class="github">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                        </span>
+                    </div>
                 </div>
                 <div class="project">
-                    <a href="https://github.com/UT-ABCS/youtube-to-spotify-ws">
+                    <a target="_blank" href="https://github.com/UT-ABCS/youtube-to-spotify-ws">
                         <img src="assets/projects/interactive-comments.png" alt="Interactive comments project">
                     </a>
-                    <h3>YouTube to Spotify Automation</h3>
-                    <p>This project is blah blah blah.</p>
-                    <span class="skills">
-                        <h4>Workshop</h4>
-                        <h4>Python</h4>
-                        <h4>Google Sheets API</h4>
-                        <h4>Spotify API</h4>
-                    </span>
-                    <span class="links">
-                        <a href="https://github.com/UT-ABCS/youtube-to-spotify-ws" class="github">
-                            <i class="fa-brands fa-github"></i>
-                        </a>
-                        <a href="https://docs.google.com/presentation/d/1iQVF6v7yutT6KqyBbtqpZPRtcnuj2pMHgwOyenD6xe0/edit?usp=sharings" class="slides">
-                            <i class="fa-brands fa-slideshare"></i>
-                        </a>
-                    </span>
+                    <div class="proj-info">
+                        <h3>YouTube to Spotify Automation</h3>
+                        <p>This project is blah blah blah.</p>
+                        <span class="skills">
+                            <h4>Workshop</h4>
+                            <h4>Python</h4>
+                            <h4>Google Sheets API</h4>
+                            <h4>Spotify API</h4>
+                        </span>
+                        <span class="links">
+                            <a target="_blank" href="https://github.com/UT-ABCS/youtube-to-spotify-ws" class="github">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                            <a target="_blank" href="https://docs.google.com/presentation/d/1iQVF6v7yutT6KqyBbtqpZPRtcnuj2pMHgwOyenD6xe0/edit?usp=sharings" class="slides">
+                                <i class="fa-brands fa-slideshare"></i>
+                            </a>
+                        </span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -286,31 +312,35 @@
             <p>My inbox is always open! Get in touch with me via email at kyland03.biz@gmail.com.</p>
             <form>
                 <div class="first-name">
-                    <!-- Use ::before for the label -->
-                    <input type="text" name="name" id="name" placeholder="Name" class="has-value">
-                    <p>This field is required</p>
+                    <!-- Use ::before for the label, has-value class when the input has text -->
+                    <input type="text" name="name" id="name" placeholder="Name" class="">
+                    <p><i class="fa-solid fa-circle-exclamation"></i>&nbsp;This field is required</p>
                 </div>
                 <div class="email">
-                    <!-- Use ::before for the label -->
-                    <input type="email" name="email" id="email" placeholder="Email" class="has-value">
-                    <p>This field is required</p>
+                    <!-- Use ::before for the label, has-value class when the input has text -->
+                    <input type="email" name="email" id="email" placeholder="Email" class="">
+                    <p><i class="fa-solid fa-circle-exclamation"></i>&nbsp;Please enter a valid email</p>
                 </div>
                 <div class="message">
-                    <!-- Use ::before for the label -->
-                    <textarea name="message" id="message" placeholder="Your message here..." class="has-value"></textarea>
-                    <p>This field is required</p>
+                    <!-- Use ::before for the label, has-value class when the input has text -->
+                    <textarea name="message" id="message" placeholder="Your message here..." class=""></textarea>
+                    <p><i class="fa-solid fa-circle-exclamation"></i>&nbsp;This field is required</p>
                 </div>
                 <button class="send">submit</button>
             </form>
+            <button class="up">
+                <i class="fa-regular fa-circle-up"></i>
+                <i class="fa-solid fa-circle-up"></i>
+            </button>
         </section>
     </main>
     <footer>
         <p>All rights reserved © 2024 Kylan Duncan</p>
         <span class="links">
-            <a href="https://linkedin.com/in/kylan-duncan"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="https://github.com/cloudydaiyz"><i class="fa-brands fa-github"></i></a>
-            <a href="https://www.frontendmentor.io/profile/cloudydaiyz"><i class="fa-solid fa-laptop"></i></a>
-            <a href="https://github.com/cloudydaiyz/personal-portfolio"><i class="fa-solid fa-code"></i></a>
+            <a target="_blank" href="https://linkedin.com/in/kylan-duncan"><i class="fa-brands fa-linkedin"></i></a>
+            <a target="_blank" href="https://github.com/cloudydaiyz"><i class="fa-brands fa-github"></i></a>
+            <a target="_blank" href="https://www.frontendmentor.io/profile/cloudydaiyz"><i class="fa-solid fa-laptop"></i></a>
+            <a target="_blank" href="https://github.com/cloudydaiyz/personal-portfolio"><i class="fa-solid fa-code"></i></a>
         </span>
     </footer>
 </body>
