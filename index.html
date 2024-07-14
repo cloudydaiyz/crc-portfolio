@@ -15,27 +15,28 @@
 </head>
 <body>
     <header>
-        <h2>Hello, I am...</h2>
-        <h3>
+        <h2 class="fade-in fade-off fade-up">Hello, I am...</h2>
+        <h3 class="fade-in fade-off fade-up">
             <span class="first-name">KYLAN</span>
             <span class="last-name">DUNCAN</span>
         </h3>
         <!-- Full Stack Developer -->
-        <p class="title"><span class="cursor rest">|</span></p>
+        <p class="title"> <span class="cursor rest hidden">|</span></p>
         <!-- Website visits: idk yet -->
-        <p class="web-visits"><span class="cursor rest">|</span></p>
-        <button class="down">
+        <p class="web-visits"> <span class="cursor rest hidden">|</span></p>
+        <button class="down fade-in fade-off fade-up">
             <i class="fa-regular fa-circle-down"></i>
             <i class="fa-solid fa-circle-down"></i>
         </button>
+        <button class="fast-forward"><i class="fa-solid fa-forward-fast"></i></button>
     </header>
-    <main>
+    <main class="hidden">
         <nav>
             <h2>
                 <span class="brand-name">cloudydaiyz</span>
             </h2>
             <span class="sections">
-                <button class="about-me enabled">about me</button>
+                <button class="about-me">about me</button>
                 <button class="skills">skills</button>
                 <button class="projects">projects</button>
                 <button class="contact-me">contact me</button>
@@ -45,7 +46,7 @@
                 </button>
             </span>
             <div class="mobile dropdown">
-                <button class="about-me enabled">about me</button>
+                <button class="about-me">about me</button>
                 <button class="skills">skills</button>
                 <button class="projects">projects</button>
                 <button class="contact-me">contact me</button>
@@ -53,7 +54,7 @@
         </nav>
         <section class="about-me">
             <div class="info-dump">
-                <div class="info">
+                <div class="info fade-in fade-off fade-left">
                     <h2>About Me</h2>
                     <p>I am a full stack developer, fueled by continous learning and a passion of creating innovative software. As a previous student of the University of Texas at Austin and a software engineer with previous intern experience at Amazon, Cummins, and Ansys, I bring a unique blend of experience, spanning from full stack development, project management, and mentorship. I'm eager to put my skills and knowledge to use by creating innovative, efficient, and reliable solutions to real-world problems.</p>
                     <div class="work-info">
@@ -63,7 +64,7 @@
                         </span>
                         <span class="info-item">
                             <h3>Preferred Work Location</h3>
-                            <p>Houston, TX or Remote</p>
+                            <p>Remote</p>
                         </span>
                         <span class="info-item">
                             <h3>Email</h3>
@@ -75,9 +76,9 @@
                         </span>
                     </div>
                 </div>
-                <div class="image-info">
+                <div class="image-info fade-in fade-off fade-left">
                     <div class="description">
-                        <p class="selected">This is me. Nice to meet you!</p>
+                        <p>This is me. Nice to meet you!</p>
                         <p>Me helping out a student at the Postman Student Fundamentals workshop that I hosted in collaboration with Postman at the University of Texas at Austin.</p>
                         <p>A group picture of some of the attendees for the Postman Student Fundamentals workshop that I hosted in collaboration with Postman at the University of Texas at Austin.</p>
                         <p>A fun Anime Night social that I hosted between my previous student organization, the Association of Black Computer Scientists, and my school's chapter of the National Society of Black engineers.</p>
@@ -90,8 +91,8 @@
                     </span>
                 </div>
             </div>
-            <div class="image-selector">
-                <img src="assets/images/headshot.png" alt="Picture of me" class="selected">
+            <div class="image-selector fade-in fade-off fade-right">
+                <img src="assets/images/headshot.png" alt="Picture of me">
                 <img src="assets/images/linkedin-1.jpeg" alt="Picture of me">
                 <img src="assets/images/linkedin-2.jpeg" alt="Picture of me">
                 <img src="assets/images/linkedin-3.jpeg" alt="Picture of me">
@@ -219,7 +220,7 @@
         </section>
         <section class="projects">
             <h2>Projects</h2>
-            <div class="all-projects">
+            <div class="all-projects fade-in fade-off fade-up">
                 <div class="project">
                     <a target="_blank" href="https://github.com/cloudydaiyz/membership-logger">
                         <img src="assets/projects/interactive-comments.png" alt="Interactive comments project">
@@ -310,31 +311,33 @@
         <section class="contact-me">
             <h2>Contact Me</h2>
             <p>My inbox is always open! Get in touch with me via email at kyland03.biz@gmail.com.</p>
-            <form>
+            <form class="fade-in fade-off fade-up">
                 <div class="first-name">
                     <!-- Use ::before for the label, has-value class when the input has text -->
-                    <input type="text" name="name" id="name" placeholder="Name" class="">
+                    <input type="text" name="name" id="name" placeholder="Name" class="" required>
                     <p><i class="fa-solid fa-circle-exclamation"></i>&nbsp;This field is required</p>
                 </div>
                 <div class="email">
                     <!-- Use ::before for the label, has-value class when the input has text -->
-                    <input type="email" name="email" id="email" placeholder="Email" class="">
+                    <!-- <input type="email" name="email" id="email" placeholder="Email" class="" required> -->
+                    <input type="text" name="email" id="email" placeholder="Email" class="" required>
                     <p><i class="fa-solid fa-circle-exclamation"></i>&nbsp;Please enter a valid email</p>
                 </div>
                 <div class="message">
                     <!-- Use ::before for the label, has-value class when the input has text -->
-                    <textarea name="message" id="message" placeholder="Your message here..." class=""></textarea>
+                    <textarea name="message" id="message" placeholder="Your message here..." class="" required></textarea>
                     <p><i class="fa-solid fa-circle-exclamation"></i>&nbsp;This field is required</p>
                 </div>
                 <button class="send">submit</button>
             </form>
-            <button class="up">
+            <p class="onsuccess">Thanks! Looking forward to connecting with you soon. <i class="fa-regular fa-face-smile"></i></p>
+            <button class="up fade-in fade-off fade-up">
                 <i class="fa-regular fa-circle-up"></i>
                 <i class="fa-solid fa-circle-up"></i>
             </button>
         </section>
     </main>
-    <footer>
+    <footer class="hidden">
         <p>All rights reserved © 2024 Kylan Duncan</p>
         <span class="links">
             <a target="_blank" href="https://linkedin.com/in/kylan-duncan"><i class="fa-brands fa-linkedin"></i></a>
@@ -343,5 +346,7 @@
             <a target="_blank" href="https://github.com/cloudydaiyz/personal-portfolio"><i class="fa-solid fa-code"></i></a>
         </span>
     </footer>
+
+    <script src="javascript/app.js"></script>
 </body>
 </html>
