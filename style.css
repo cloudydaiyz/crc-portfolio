@@ -157,7 +157,7 @@ header {
 
 header h2 {
     text-shadow: var(--box-shadow);
-    font-size: clamp(1.5rem, 2vw, 3rem);
+    font-size: clamp(1.5rem, 5vw, 3rem);
     margin-bottom: var(--space-1);
 }
 
@@ -166,7 +166,7 @@ header h3 {
     flex-direction: column;
     align-items: center;
 
-    font-size: clamp(2.5rem, 6vw, 6rem);
+    font-size: clamp(2.5rem, 10vw, 6rem);
     /* margin-bottom: 3rem; */
     margin-bottom: var(--space-1);
 }
@@ -174,7 +174,7 @@ header h3 {
 header p {
     font-family: var(--font-3);
     text-shadow: var(--box-shadow);
-    font-size: clamp(1rem, 1.5vw, 1.3rem);
+    font-size: clamp(1rem, 3vw, 1.3rem);
 }
 
 header p.web-visits {
@@ -736,17 +736,17 @@ section.projects > h2 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: all .5s;
 }
 
 .project a img {
     position: absolute;
-    width: 100%;
-    transition: all .5s;
+    max-width: 100%;
     border-radius: 16px;
 }
 
-.project > a:hover img {
-    width: 105%;
+.project > a:hover {
+    transform: scale(1.05);
 }
 
 .proj-info {

@@ -43,11 +43,12 @@ const emailInput = document.querySelector('form .email input');
 const messageDiv = document.querySelector('form .message');
 const messageInput = document.querySelector('form .message textarea');
 const contactSubmitBtn = document.querySelector('form .send');
-const testEle = document.querySelector('div');
-const testEle2 = document.createTextNode('blah');
+// For me to view the types of certain elements
+// const testEle = document.querySelector('div');
+// const testEle2 = document.createTextNode('blah');
 // Variable constants
 const galleryLength = galleryImages.length;
-const titles = ['Full Stack Developer', 'One Piece Conniseuir'];
+const titles = ['Full Stack Developer', 'One Piece Conniseuir', 'Kagurabachi Advocate', 'The Cure to Cancer', 'You must be bored, huh?'];
 // State
 let galleryIndex = 0;
 let siteVisits = 0;
@@ -287,12 +288,10 @@ contactSubmitBtn.addEventListener('click', submitContactForm);
 }))();
 /**
  * TODO
- * 4. All elements fade in on scroll
- * 5. Opening animation (make main, footer, and down btn initially invisible, then
- * when the typing animation finishes, make down btn, main and footer visible)
  * 6. cloud portfolio (initHeader() function)
  * 6a. update profile visits on refresh
- * 6b. get profile visits every 5 seconds
+ * 6b. get profile visits every 5 (or 10) seconds
  * 6c. have separate store for github profile visits
- * 7. Website visits animation
+ * 7. submit email to user to verify if they want their msg sent via SES
+ * 8. Website visits animation
  */ 

@@ -41,12 +41,13 @@ const messageDiv = document.querySelector('form .message') as HTMLDivElement;
 const messageInput = document.querySelector('form .message textarea') as HTMLTextAreaElement;
 const contactSubmitBtn = document.querySelector('form .send') as HTMLButtonElement;
 
-const testEle = document.querySelector('div');
-const testEle2 = document.createTextNode('blah');
+// For me to view the types of certain elements
+// const testEle = document.querySelector('div');
+// const testEle2 = document.createTextNode('blah');
 
 // Variable constants
 const galleryLength = galleryImages.length;
-const titles = ['Full Stack Developer', 'One Piece Conniseuir']
+const titles = ['Full Stack Developer', 'One Piece Connoiseuir', 'Kagurabachi Advocate', 'The Cure to Cancer', 'You must be bored, huh?']
 
 // State
 let galleryIndex = 0;
@@ -323,9 +324,18 @@ contactSubmitBtn.addEventListener('click', submitContactForm);
 
 /**
  * TODO
- * 6. cloud portfolio (initHeader() function)
+ * 6. cloud portfolio
  * 6a. update profile visits on refresh
  * 6b. get profile visits every 5 (or 10) seconds
  * 6c. have separate store for github profile visits
+ * 6d. update initHeader() function
  * 7. Website visits animation
+ * 8. submit email to user to verify if they want their msg sent via SES
+ * 9. place all emails in SQS queue
+ * 10. CI/CD
+ * 
+ * In the future
+ * 11. Add an error.html document?
+ * https://docs.aws.amazon.com/AmazonS3/latest/userguide/CustomErrorDocSupport.html
+ * https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_website_configuration
  */
