@@ -1,8 +1,8 @@
 # infrastructure/lambda
 
 Run test code:
-`python3 -m pip install -r requirements.txt`
-`python3 test.py`
+1. `python3 -m pip install -r requirements.txt`
+2. `python3 test.py`
 
-Zip command:
-`zip lambda.zip lambda.py`
+Zip command example:
+`zip handler.zip handler.py`
