@@ -26,6 +26,10 @@ resource "aws_s3_object" "javascript" {
   bucket   = aws_s3_bucket.crc-bucket.id
   key      = "javascript/app.js"
   source   = "../javascript/app.js"
+
+  # To detect when changes occur
+  # https://stackoverflow.com/a/56120462
+  source_hash = filemd5("../javascript/app.js")
 }
 
 resource "aws_s3_object" "index" {
@@ -34,6 +38,9 @@ resource "aws_s3_object" "index" {
   key          = "index.html"
   source       = "../index.html"
   content_type = "text/html"
+
+  # To detect when changes occur
+  source_hash = filemd5("../index.html")
 }
 
 resource "aws_s3_object" "style" {
@@ -42,6 +49,9 @@ resource "aws_s3_object" "style" {
   key          = "style.css"
   source       = "../style.css"
   content_type = "text/css"
+
+  # To detect when changes occur
+  source_hash = filemd5("../style.css")
 }
 
 # Static website files - assets folder
@@ -74,6 +84,9 @@ resource "aws_s3_object" "asset" {
   bucket = aws_s3_bucket.crc-bucket.id
   key    = "assets/${each.key}"
   source = "../assets/${each.key}"
+
+  # To detect when changes occur
+  source_hash = filemd5("../assets/${each.key}")
 }
 
 # Static website config, disabling because can't use OAC with static website hosting

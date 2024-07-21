@@ -48,7 +48,7 @@ const contactSubmitBtn = document.querySelector('form .send');
 // const testEle2 = document.createTextNode('blah');
 // Variable constants
 const galleryLength = galleryImages.length;
-const titles = ['Full Stack Developer', 'One Piece Conniseuir', 'Kagurabachi Advocate', 'The Cure to Cancer', 'You must be bored, huh?'];
+const titles = ['Full Stack Developer', 'One Piece Connoisseur', 'Kagurabachi Advocate', 'The Cure to Cancer', 'You must be bored, huh?'];
 // State
 let galleryIndex = 0;
 let siteVisits = 0;
@@ -165,7 +165,21 @@ function submitContactForm(event) {
 }
 function initHeader() {
     return __awaiter(this, void 0, void 0, function* () {
-        // Add functionality to get website visits here (future)
+        // Get the website visits
+        let visits = '';
+        try {
+            const res = yield fetch('https://s7gyrdfua8.execute-api.us-east-2.amazonaws.com/prod/portfolio', {
+                method: "POST"
+            });
+            const resJson = yield res.json();
+            // console.log(res);
+            // console.log(resJson);
+            // console.log(resJson.statusCode, resJson.body.count);
+            visits = resJson.body.count;
+        }
+        catch (_a) {
+            visits = 'idk yet';
+        }
         // Add fast forward feature
         const skipAll = () => __awaiter(this, void 0, void 0, function* () {
             skipTyping = true;
@@ -193,7 +207,7 @@ function initHeader() {
         yield typeText(titleView.childNodes[0], "Full Stack Developer", titleCursor);
         titleCursor.classList.add('hidden');
         siteVisitsCursor.classList.remove('hidden');
-        yield typeText(siteVisitsView.childNodes[0], "Website visits: idk yet", siteVisitsCursor);
+        yield typeText(siteVisitsView.childNodes[0], "Website visits: " + visits, siteVisitsCursor);
         // Make the rest of the website available
         addFadeInAnims();
         main.classList.remove('hidden');
@@ -286,12 +300,3 @@ contactSubmitBtn.addEventListener('click', submitContactForm);
     updateNavSection();
     initHeader();
 }))();
-/**
- * TODO
- * 6. cloud portfolio (initHeader() function)
- * 6a. update profile visits on refresh
- * 6b. get profile visits every 5 (or 10) seconds
- * 6c. have separate store for github profile visits
- * 7. submit email to user to verify if they want their msg sent via SES
- * 8. Website visits animation
- */ 

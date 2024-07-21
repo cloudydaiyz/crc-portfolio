@@ -122,6 +122,12 @@ resource "aws_api_gateway_method_response" "response_200" {
   http_method = each.key
   status_code = "200"
 
+  response_parameters = {
+    "method.response.header.Access-Control-Allow-Headers" = true
+    "method.response.header.Access-Control-Allow-Methods" = true
+    "method.response.header.Access-Control-Allow-Origin" = true
+  }
+
 	depends_on = [
 		aws_api_gateway_integration.example
 	]
@@ -150,6 +156,13 @@ resource "aws_api_gateway_integration_response" "example" {
 	# </message>
 	# EOF
 	# 	}
+
+  # Headers to prevent conflict with CORS
+  response_parameters = {
+    "method.response.header.Access-Control-Allow-Headers" = "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
+    "method.response.header.Access-Control-Allow-Methods" = "'GET,POST'",
+    "method.response.header.Access-Control-Allow-Origin"  = "'*'"
+  }
 
 	depends_on = [
 		aws_api_gateway_integration.example

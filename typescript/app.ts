@@ -47,7 +47,7 @@ const contactSubmitBtn = document.querySelector('form .send') as HTMLButtonEleme
 
 // Variable constants
 const galleryLength = galleryImages.length;
-const titles = ['Full Stack Developer', 'One Piece Connoiseuir', 'Kagurabachi Advocate', 'The Cure to Cancer', 'You must be bored, huh?']
+const titles = ['Full Stack Developer', 'One Piece Connoisseur', 'Kagurabachi Advocate', 'The Cure to Cancer', 'You must be bored, huh?']
 
 // State
 let galleryIndex = 0;
@@ -175,7 +175,21 @@ function submitContactForm(event: Event) {
 }
 
 async function initHeader() {
-    // Add functionality to get website visits here (future)
+    // Get the website visits
+    let visits = '';
+    try {
+        const res = await fetch('https://s7gyrdfua8.execute-api.us-east-2.amazonaws.com/prod/portfolio', {
+            method: "POST"
+        });
+        const resJson = await res.json();
+        // console.log(res);
+        // console.log(resJson);
+        // console.log(resJson.statusCode, resJson.body.count);
+
+        visits = resJson.body.count;
+    } catch {
+        visits = 'idk yet'
+    }
 
     // Add fast forward feature
     const skipAll = async () => {
@@ -209,7 +223,7 @@ async function initHeader() {
     await typeText(titleView.childNodes[0] as Text, "Full Stack Developer", titleCursor as Element);
     titleCursor.classList.add('hidden');
     siteVisitsCursor.classList.remove('hidden');
-    await typeText(siteVisitsView.childNodes[0] as Text, "Website visits: idk yet", siteVisitsCursor as Element);
+    await typeText(siteVisitsView.childNodes[0] as Text, "Website visits: " + visits, siteVisitsCursor as Element);
 
     // Make the rest of the website available
     addFadeInAnims();
@@ -321,21 +335,3 @@ contactSubmitBtn.addEventListener('click', submitContactForm);
     updateNavSection();
     initHeader();
 })();
-
-/**
- * TODO
- * 6. cloud portfolio
- * 6a. update profile visits on refresh
- * 6b. get profile visits every 5 (or 10) seconds
- * 6c. have separate store for github profile visits
- * 6d. update initHeader() function
- * 7. Website visits animation
- * 8. submit email to user to verify if they want their msg sent via SES
- * 9. place all emails in SQS queue
- * 10. CI/CD
- * 
- * In the future
- * 11. Add an error.html document?
- * https://docs.aws.amazon.com/AmazonS3/latest/userguide/CustomErrorDocSupport.html
- * https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_website_configuration
- */
