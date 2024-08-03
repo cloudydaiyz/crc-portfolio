@@ -3,8 +3,8 @@ resource "aws_dynamodb_table" "crc-table" {
   provider = aws.kduncan
   name           = "Visits"
   billing_mode   = "PROVISIONED"
-  read_capacity  = 20
-  write_capacity = 20
+  read_capacity  = 1
+  write_capacity = 1
   hash_key       = "Type" # partition key
   range_key      = "CounterID" # sort key
 
