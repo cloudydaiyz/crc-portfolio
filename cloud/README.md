@@ -1,5 +1,9 @@
 # infrastructure
 
+Originally, this architecture included S3, CloudFront for static website hosting. To maximize cost savings, I decided to go with hosting the static website on Cloudflare Pages instead. The old S3 and Cloudfront code can be found in the `archive` directory.
+
+## Commands
+
 To plan:
 `terraform plan`
 
