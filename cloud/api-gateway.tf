@@ -197,7 +197,7 @@ resource "aws_api_gateway_deployment" "example" {
 
   depends_on = [
     aws_api_gateway_method.example
-    
+
   ]
 }
 
@@ -236,6 +236,30 @@ resource "aws_lambda_permission" "apigw_permission" {
       aws_lambda_function.test_lambda
     ]
   }
+}
+
+resource "aws_acm_certificate" "gateway_cert" {
+  provider = aws.us_east_1
+  domain_name       = "api.crc.cloudydaiyz.com"
+  validation_method = "DNS"
+}
+
+resource "aws_acm_certificate_validation" "gateway_cert_validation" {
+  provider = aws.us_east_1
+  certificate_arn         = aws_acm_certificate.gateway_cert.arn
+}
+
+resource "aws_api_gateway_domain_name" "domain" {
+  provider = aws.kduncan
+  certificate_arn = aws_acm_certificate_validation.gateway_cert_validation.certificate_arn
+  domain_name     = "api.crc.cloudydaiyz.com"
+}
+
+# Connects the domain name to the rest API
+resource "aws_api_gateway_base_path_mapping" "example" {
+  api_id      = aws_api_gateway_rest_api.example.id
+  stage_name  = aws_api_gateway_stage.example.stage_name
+  domain_name = aws_api_gateway_domain_name.domain.domain_name
 }
 
 output "base_url" {
