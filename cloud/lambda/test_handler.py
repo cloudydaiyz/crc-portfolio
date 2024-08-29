@@ -1,11 +1,11 @@
 import json
-import test_handler
 import handler
 import secret
 import boto3
 from botocore.config import Config
+import pytest
 
-def handler_test(use_handler=False, use_test_handler=True):
+def test_handler():
     test_data = [
         {
             "path": "github",
@@ -37,21 +37,12 @@ def handler_test(use_handler=False, use_test_handler=True):
         data = json.loads(data_template)
         print(f'Test number: {i + 1}')
 
-        if(use_test_handler):
-            print('Function: test_handler')
-            result = test_handler.lambda_handler(data, None, session, config)
-            print()
-            print('Test result:')
-            print(result)
-            print('\n')
-        
-        if(use_handler):
-            print('Function: handler')
-            result = handler.lambda_handler(data, None, session, config)
-            print()
-            print('Test result:')
-            print(result)
-            print('\n')
+        print('Function: handler')
+        result = handler.lambda_handler(data, None, session, config)
+        print()
+        print('Test result:')
+        print(result)
+        print('\n')
 
 if __name__ == '__main__':
-    handler_test(True, False)
+    pytest.main()
