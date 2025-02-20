@@ -8,6 +8,7 @@ on:
 jobs:
   cloudflare:
     runs-on: ubuntu-latest
+    environment: production
     env:
       DEPLOY_URL: ${{ secrets.DEPLOY_URL }}
     steps:
