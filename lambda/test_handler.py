@@ -28,9 +28,6 @@ def test_handler():
     # Create a session
     session = boto3.Session()
 
-    # Create a config to ensure the region is us-east-2
-    config = Config()
-
     # Use the lambda_handler for the test
     for i in range(len(test_data)):
         data_template = template.make_template(test_data[i]['path'], test_data[i]['method'])
@@ -38,7 +35,7 @@ def test_handler():
         print(f'Test number: {i + 1}')
 
         print('Function: handler')
-        result = handler.lambda_handler(data, None, session, config)
+        result = handler.lambda_handler(data, None, session)
         print()
         print('Test result:')
         print(result)
