@@ -1,4 +1,9 @@
 terraform {
+  backend "s3" {
+    bucket     = "crc-portfolio-config"
+    key        = "state/prod.tfstate"
+  }
+
   required_providers {
     aws = {
       source  = "hashicorp/aws"

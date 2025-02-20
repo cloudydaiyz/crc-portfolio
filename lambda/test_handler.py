@@ -2,9 +2,7 @@ import json
 import handler
 import template
 import boto3
-from botocore.config import Config
 import pytest
-import os
 
 def test_handler():
     test_data = [
