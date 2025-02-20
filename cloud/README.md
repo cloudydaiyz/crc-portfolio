@@ -5,13 +5,13 @@ Originally, this architecture included S3, CloudFront for static website hosting
 ## Commands
 
 To plan:
-`terraform plan`
+`terraform plan --var-file=variables.tfvars`
 
 To deploy:
-`terraform apply --auto-approve`
+`terraform apply --auto-approve --var-file=variables.tfvars`
 
 To redeploy the API gateway (after making changes to the gateway):
-`terraform apply -replace aws_api_gateway_deployment.example --auto-approve`
+`terraform apply -replace aws_api_gateway_deployment.example --auto-approve --var-file=variables.tfvars`
 
 To redeploy the DynamoDB table (resetting the counters):
-`terraform apply -replace="aws_dynamodb_table.crc-table" --auto-approve`
+`terraform apply -replace="aws_dynamodb_table.crc-table" --auto-approve --var-file=variables.tfvars`
