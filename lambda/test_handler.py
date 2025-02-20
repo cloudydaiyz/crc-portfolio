@@ -4,8 +4,10 @@ import template
 import boto3
 from botocore.config import Config
 import pytest
+import os
 
 def test_handler():
+    print("bloop: " + os.getenv("BLOOP"))
     test_data = [
         {
             "path": "github",
