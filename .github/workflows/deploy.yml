@@ -1,0 +1,15 @@
+name: Scheduled Deployment
+
+on:
+  schedule:
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy
+        env:
+          DEPLOY_URL: ${{ secrets.DEPLOY_URL }}
+        run: scripts/deploy.sh
