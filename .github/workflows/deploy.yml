@@ -26,7 +26,7 @@ jobs:
       - name: Terraform Plan
         working-directory: cloud
         run: |
-          terraform plan --auto-approve \
+          terraform plan \
           -var cloudflare_api_token=$CLOUDFLARE_API_TOKEN \
           -var aws_access_key=$AWS_ACCESS_KEY_ID \
           -var aws_secret_access_key=$AWS_SECRET_ACCESS_KEY \
