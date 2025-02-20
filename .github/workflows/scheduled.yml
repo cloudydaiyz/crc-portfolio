@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  test:
+  cloudflare:
     runs-on: ubuntu-latest
     env:
       DEPLOY_URL: ${{ secrets.DEPLOY_URL }}
