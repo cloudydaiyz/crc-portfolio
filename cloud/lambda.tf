@@ -34,7 +34,7 @@ data "aws_iam_policy_document" "lambda_policy" {
       "logs:CreateLogGroup"
     ]
     resources = [
-      "arn:aws:logs:${local.region}:${local.account_id}:*"
+      "arn:aws:logs:${var.aws_region}:${local.account_id}:*"
     ]
   }
   statement {
@@ -43,7 +43,7 @@ data "aws_iam_policy_document" "lambda_policy" {
       "logs:PutLogEvents"
     ]
     resources = [
-      "arn:aws:logs:${local.region}:${local.account_id}:log-group:/aws/lambda/${local.lambda_name}:*"
+      "arn:aws:logs:${var.aws_region}:${local.account_id}:log-group:/aws/lambda/${local.lambda_name}:*"
     ]
   }
 
@@ -55,7 +55,7 @@ data "aws_iam_policy_document" "lambda_policy" {
       "dynamodb:UpdateItem"
     ]
     resources = [
-      "arn:aws:dynamodb:${local.region}:${local.account_id}:table/${local.table_name}"
+      "arn:aws:dynamodb:${var.aws_region}:${local.account_id}:table/${local.table_name}"
     ]
   }
 }

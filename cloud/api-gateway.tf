@@ -49,7 +49,7 @@ resource "aws_api_gateway_integration" "example" {
   type                    = "AWS"
 
   # Invoke URI of the lambda function
-  # uri = "arn:aws:apigateway:${local.region}:lambda:path/2015-03-31/functions/${aws_lambda_function.test_lambda.arn}/invocations"
+  # uri = "arn:aws:apigateway:${var.aws_region}:lambda:path/2015-03-31/functions/${aws_lambda_function.test_lambda.arn}/invocations"
   uri = aws_lambda_function.test_lambda.invoke_arn
 
   # Integration request - mapping template
@@ -227,8 +227,8 @@ resource "aws_lambda_permission" "apigw_permission" {
   # http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-control-access-using-iam-policies-to-invoke-api.html
   # https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-control-access-using-iam-policies-to-invoke-api.html#api-gateway-calling-api-permissions
 
-  # source_arn    = "arn:aws:execute-api:${local.region}:${local.account_id}:${aws_api_gateway_rest_api.example.id}/*/${aws_api_gateway_method.example.http_method}/${aws_api_gateway_resource.example.path}"
-  # source_arn    = "arn:aws:execute-api:${local.region}:${local.account_id}:${aws_api_gateway_rest_api.example.id}/*"
+  # source_arn    = "arn:aws:execute-api:${var.aws_region}:${local.account_id}:${aws_api_gateway_rest_api.example.id}/*/${aws_api_gateway_method.example.http_method}/${aws_api_gateway_resource.example.path}"
+  # source_arn    = "arn:aws:execute-api:${var.aws_region}:${local.account_id}:${aws_api_gateway_rest_api.example.id}/*"
   source_arn = "${aws_api_gateway_rest_api.example.execution_arn}/*"
 
   lifecycle {
