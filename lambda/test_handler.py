@@ -7,7 +7,6 @@ import pytest
 import os
 
 def test_handler():
-    print("bloop: " + os.getenv("BLOOP"))
     test_data = [
         {
             "path": "github",
